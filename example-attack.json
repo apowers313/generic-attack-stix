@@ -1,0 +1,154 @@
+{
+  "type": "bundle",
+  "id": "bundle--09b00d9a-b9a7-4079-a0e7-f642626fb3a2",
+  "spec_version": "2.0",
+  "objects": [
+    {
+      "type": "x-mitre-matrix",
+      "id": "x-mitre-matrix--42dd3eeb-130e-46bd-afbf-64b476fd2a94",
+      "name": "Example Matrix",
+      "description": "This is a test matrix to demonstrate how to build custom matricies.",
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2018-10-17T00:14:20.652Z",
+      "modified": "2019-04-16T21:39:18.247Z",
+      "tactic_refs": [
+        "x-mitre-tactic--d64fbae0-afd3-463c-b7cf-fa6ff3edbcaf"
+      ]
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--d64fbae0-afd3-463c-b7cf-fa6ff3edbcaf",
+      "name": "Initial Access",
+      "x_mitre_shortname": "initial-access",
+      "description": "An example 'tactic' or kill chain phase.",
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2018-10-17T00:14:20.652Z",
+      "modified": "2019-07-19T17:44:53.176Z",
+      "external_references": [
+        {
+          "source_name": "example-attack",
+          "external_id": "P001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--183dcab1-9bd1-4973-aede-0e2ab0183d11",
+      "name": "Example Attack",
+      "description": "An example 'technique' or attack.",
+      "x_mitre_detection": "A short description of how the attack can be detected.",
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2017-12-14T16:46:06.044Z",
+      "modified": "2019-06-13T14:49:56.024Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "example-kill-chain",
+          "phase_name": "initial-access"
+        }
+      ],
+      "x_mitre_version": "1.0",
+      "external_references": [
+        {
+          "external_id": "ID123",
+          "source_name": "example-attack",
+          "url": "https://example.org/attack/ID123"
+        }
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "id": "course-of-action--51288acf-2e35-4d23-a628-007f87b5feb5",
+      "name": "Example 'mitigation' or course of action.",
+      "description": "Just an example of a mitigation.",
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2018-10-17T00:14:20.652Z",
+      "modified": "2019-07-24T14:02:53.251Z",
+      "x_mitre_version": "1.0",
+      "external_references": [
+        {
+          "external_id": "M0001",
+          "source_name": "example-attack",
+          "url": "https://example.org/mitigations/M0001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--82a14f93-9134-4640-ae15-50760a229566",
+      "source_ref": "course-of-action--51288acf-2e35-4d23-a628-007f87b5feb5",
+      "relationship_type": "mitigates",
+      "target_ref": "attack-pattern--183dcab1-9bd1-4973-aede-0e2ab0183d11",
+      "description": "There. The threat should be mitigated now.",
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2019-06-13T16:59:18.442Z",
+      "modified": "2019-10-09T20:58:14.121Z"
+    },
+    {
+      "type": "intrusion-set",
+      "id": "intrusion-set--82f4b4e1-cbe2-4477-bf64-2e2ccadec926",
+      "name": "Angry Iguana",
+      "description": "An example intrusion set, APT, or group.",
+      "aliases": [
+        "Dead Lizard",
+        "Blue Belly"
+      ],
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2017-05-31T21:31:47.955Z",
+      "modified": "2019-08-20T13:08:12.971Z",
+      "x_mitre_version": "1.1",
+      "external_references": [
+        {
+          "external_id": "TA0001",
+          "source_name": "example-attack"
+        }
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--8694d649-9095-48f0-9dbd-7573152e7a9d",
+      "created": "2015-05-15T09:00:00.000Z",
+      "modified": "2015-05-15T09:00:00.000Z",
+      "name": "Example Malware",
+      "description": "This is an example of malware. Lorem ipsum.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "example-kill-chain",
+          "phase_name": "initial-access"
+        }
+      ],
+      "x_mitre_aliases": [
+        "Example Malware"
+      ],
+      "labels": [
+        "malware"
+      ],
+      "x_mitre_version": "1.0",
+      "external_references": [
+        {
+          "external_id": "S0099",
+          "source_name": "example-attack",
+          "url": "https://example.org/malware/S0099"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--02cf9bec-5638-44ce-b9fd-e3b705443430",
+      "source_ref": "attack-pattern--183dcab1-9bd1-4973-aede-0e2ab0183d11",
+      "relationship_type": "uses",
+      "target_ref": "malware--8694d649-9095-48f0-9dbd-7573152e7a9d",
+      "description": "Example Malware has the capability to eat your taco while you aren't looking.",
+      "created_by_ref": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "created": "2017-12-14T16:46:06.044Z",
+      "modified": "2018-10-17T00:14:20.652Z"
+    },
+    {
+      "type": "identity",
+      "name": "Adam Powers, Inc.",
+      "identity_class": "organization",
+      "created": "2017-06-01T00:00:00.000Z",
+      "id": "identity--b9e8b9fd-6d27-472b-bfee-3f6501edf3e9",
+      "modified": "2017-06-01T00:00:00.000Z"
+    }
+  ]
+}
